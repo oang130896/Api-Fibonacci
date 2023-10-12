@@ -31,3 +31,4 @@ por ultimo solo regreso el numero retornado de la funcion al cliente
 --Como metodo de seguirad como antes mencionado seria realizar este mtodo por post y/o enviar el parametro encryptado
 --Tengo entendido normalmente este tipo de metodo(fibonacci) lo hacen con metodos recursivos, no opte por esa opcion ya que algunas veces afecta en el rendimiento
 --Hacer todas las sumas desde el for sin tener que hacer las primeras dos validacion
+--Como metodo de seguridad y mejora seria agregar un middleware para validar algun token o api key
