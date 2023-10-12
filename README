@@ -1,0 +1,33 @@
+Este es una api desarrollada en express
+
+-Cree un archivo llamado server.js el cual es para arrancar el servicio utilizando la libreria de desarrollo nodemon utilizando el comando npm start
+el cual esta configurado en el archivo package.json
+
+-Utilice la estructura que normalmente uso, una carpeta con el archivo de rutas y otra carpeta con el archivo de controllers, normalmente uso mvc,
+siendo que la vista seria el frontend, modelos de las tablas en dado caso sea necesario(este caso no aplica), y controller
+
+-en el archivo fibonacciController.js cree un metodo llamado obtenerIndex el cual se obtiene de la ruta /api-fibonacci/obtener-index/:n el cual recibe
+un parametro, haciendo el llamado por metodo get y localmente siendo la ruta completa como ejemplo ya con parametro http://localhost:3008/api-fibonacci/obtener-index/6
+
+-por metodos de seguridad en dado caso el parametro lo estaria enviando encryptado y en la api desencriptarlo, o mandarlo por metodo post con el header de x-www-form-urlencoded
+para proteger el dato en dado caso sea una informacion delicada
+
+-El metodo obtenerIndex lo primero que hago es obtener el parametro, hago una validacion la cual si no se obtiene ese parametro regresar al cliente un mensaje de error
+de que no se recibio el parametro
+
+-Parseo el parametro para saber si es un numero o un texto y hago la validacion, en dado caso sea un NaN retorna mensaje de error a cliente
+
+-Valido si el parametro es un entero y no con decimal
+
+-hago una pequeña funcion la cual envia un parametro(n) el numero que se parseo, tengo por primero dos validacion, si n es 0 retorna 0, si n es 1 retorna 1, estos dos casos
+los puse estaticos ya que no es necesario realizar alguna suma fibonacci
+
+-declaro un array el cual agrego 0 y 1, hago un recorrido con un for el cual empieza el index en 2, la condicion es que el index del for sea menor o igual al index,
+en cada iteracion del for agrego una suma de los ultimos dos numeros agregados en el arreglo, ya que acaba el recorrido solo retorno la ultima iteracion del arreglo
+
+por ultimo solo regreso el numero retornado de la funcion al cliente
+
+--Mejora podria ser utilizando typescript para declarar que el parametro recibido solo debe de ser entero y asi ahorrarse las primeras dos validacion
+--Como metodo de seguirad como antes mencionado seria realizar este mtodo por post y/o enviar el parametro encryptado
+--Tengo entendido normalmente este tipo de metodo(fibonacci) lo hacen con metodos recursivos, no opte por esa opcion ya que algunas veces afecta en el rendimiento
+--Hacer todas las sumas desde el for sin tener que hacer las primeras dos validacion
